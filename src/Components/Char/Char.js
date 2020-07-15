@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CharComponent = ({char, onclick}) => (
+const Char = ({char, onclick}) => (
     <span
         onClick={onclick}
         style={
@@ -18,4 +18,4 @@ const CharComponent = ({char, onclick}) => (
     </span>
 )
 
-export default CharComponent
+export default Char

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ValidationComponent from "./Components/ValidationComponent/ValidationComponent";
-import CharComponent from "./Components/CharComponent/CharComponent";
+import Validation from "./Components/Validation/Validation";
+import Char from "./Components/Char/Char";
 
 class App extends Component {
   state = {
@@ -28,7 +28,7 @@ class App extends Component {
     const { state: { word }, changeCountHandler, onDeleteLetterHandler } = this
 
     const chars = !!word.length && word.split('').map((char, index) => (
-        <CharComponent
+        <Char
             key={index}
             char={char}
             onclick={ () => onDeleteLetterHandler(index) }
@@ -36,9 +36,9 @@ class App extends Component {
     ))
 
     return <div className="App">
-      <p>The word you inputed is {word.length} characters long</p>
+      <p>The text you inputed is {word.length} characters long</p>
       <div><input onChange={changeCountHandler} value={word}/></div>
-      <ValidationComponent length={word.length}/>
+      <Validation length={word.length}/>
       <div>
         { chars }
       </div>
